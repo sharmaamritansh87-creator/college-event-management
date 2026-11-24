@@ -1,0 +1,172 @@
+/* =====================================================================
+   style.css  -  our own styles, added on top of Bootstrap 5.
+   Sections: 1 Variables  2 Base  3 Login page  4 Navbar  5 Page header
+             6 Pills & tabs  7 Event cards  8 Stat cards  9 Tables
+             10 Misc  11 Certificate  12 Responsive
+   ===================================================================== */
+
+/* ---------- 1. Variables ---------- */
+:root {
+  --navy: #0f1a38;
+  --navy-soft: #1c2b52;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --blue-light: #eaf1ff;
+  --green: #15803d;
+  --green-light: #dcfce7;
+  --red: #b91c1c;
+  --red-light: #fee2e2;
+  --amber: #b45309;
+  --amber-light: #fef3c7;
+  --grey-text: #64748b;
+  --border: #e2e8f0;
+  --page-bg: #f6f8fb;
+  --radius: 14px;
+}
+
+/* ---------- 2. Base ---------- */
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--page-bg);
+  color: #0f172a;
+}
+.btn-primary { --bs-btn-bg: var(--blue); --bs-btn-border-color: var(--blue);
+  --bs-btn-hover-bg: var(--blue-dark); --bs-btn-hover-border-color: var(--blue-dark); }
+.text-grey { color: var(--grey-text); }
+.page-wrap { max-width: 1080px; margin: 0 auto; padding: 28px 16px 60px; }
+
+/* ---------- 3. Login page ---------- */
+.login-page { display: flex; min-height: 100vh; }
+.login-left {
+  flex: 1; background: var(--navy); color: #fff;
+  padding: 48px 56px; display: flex; flex-direction: column; justify-content: space-between;
+}
+.login-left .brand-text { font-size: 1.35rem; font-weight: 700; }
+.login-left h1 { font-size: 2.6rem; font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+.login-left p.lead-text { color: #b6c2e0; font-size: 1.1rem; max-width: 460px; }
+.login-left .foot-note { color: #7f8db3; font-size: .85rem; }
+.login-right { flex: 1; display: flex; align-items: center; justify-content: center; background: #fff; padding: 24px; }
+.login-card { width: 100%; max-width: 440px; border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
+.login-card h2 { font-weight: 700; margin-bottom: 4px; }
+.demo-pill {
+  border: 1px solid var(--border); background: #fff; border-radius: 999px;
+  padding: 6px 16px; font-size: .9rem; cursor: pointer; transition: all .15s;
+}
+.demo-pill:hover { border-color: var(--blue); color: var(--blue); }
+.demo-pill.active { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+/* ---------- 4. Navbar ---------- */
+.cw-navbar { background: #fff; border-bottom: 1px solid var(--border); }
+.cw-navbar .inner {
+  max-width: 1080px; margin: 0 auto; padding: 12px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; text-decoration: none; color: #0f172a; }
+.brand-badge {
+  background: var(--blue); color: #fff; font-weight: 700; font-size: .85rem;
+  width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
+}
+.nav-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.role-badge { background: #f1f5f9; border: 1px solid var(--border); border-radius: 8px; padding: 5px 12px; font-size: .85rem; font-weight: 500; }
+
+/* ---------- 5. Page header ---------- */
+.page-title { font-weight: 700; font-size: 2rem; margin-bottom: 4px; }
+.page-sub { color: var(--grey-text); margin-bottom: 24px; }
+.section-label { font-size: .75rem; letter-spacing: .08em; font-weight: 600; color: var(--grey-text); text-transform: uppercase; margin-bottom: 8px; }
+
+/* ---------- 6. Pills & tabs ---------- */
+.filter-pill {
+  border: 1px solid var(--border); background: #fff; border-radius: 999px;
+  padding: 7px 18px; font-size: .92rem; cursor: pointer; margin: 0 6px 8px 0; transition: all .15s;
+}
+.filter-pill:hover { border-color: var(--blue); }
+.filter-pill.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+.cw-tabs { display: inline-flex; background: #eef2f7; border-radius: 12px; padding: 4px; margin: 8px 0 18px; flex-wrap: wrap; }
+.cw-tab {
+  border: 0; background: transparent; padding: 8px 18px; border-radius: 9px;
+  color: var(--grey-text); font-size: .93rem; cursor: pointer;
+}
+.cw-tab.active { background: #fff; color: #0f172a; font-weight: 600; box-shadow: 0 1px 3px rgba(15,23,42,.1); }
+
+/* ---------- 7. Event cards ---------- */
+.event-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 22px 24px; margin-bottom: 16px; box-shadow: 0 1px 2px rgba(15,23,42,.04);
+}
+.event-card h3 { font-size: 1.25rem; font-weight: 600; margin: 0; }
+.event-card .club { color: var(--grey-text); margin-bottom: 10px; }
+.tag {
+  display: inline-block; border: 1px solid var(--border); border-radius: 999px;
+  padding: 3px 12px; font-size: .8rem; background: #fff; margin-left: 6px;
+}
+.event-meta { display: flex; flex-wrap: wrap; gap: 6px 22px; color: var(--grey-text); font-size: .93rem; margin: 10px 0 14px; }
+.event-meta i { margin-right: 5px; color: var(--blue); }
+.event-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.status-pill { display: inline-block; border-radius: 8px; padding: 6px 14px; font-size: .85rem; font-weight: 600; }
+.pill-green { background: var(--green-light); color: var(--green); }
+.pill-red { background: var(--red-light); color: var(--red); }
+.pill-amber { background: var(--amber-light); color: var(--amber); }
+.pill-grey { background: #eef2f7; color: #475569; }
+.pill-blue { background: var(--blue-light); color: var(--blue-dark); }
+.btn-soft { background: #f1f5f9; border: 1px solid var(--border); color: #0f172a; }
+.btn-soft:hover { background: #e7edf5; }
+.seats-bar { height: 6px; border-radius: 6px; background: #eef2f7; overflow: hidden; width: 140px; display: inline-block; vertical-align: middle; margin-left: 6px; }
+.seats-bar > span { display: block; height: 100%; background: var(--blue); }
+
+/* ---------- 8. Stat cards ---------- */
+.stat-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; height: 100%; }
+.stat-card .num { font-size: 1.9rem; font-weight: 700; line-height: 1.1; }
+.stat-card .lbl { color: var(--grey-text); font-size: .88rem; }
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: .92rem; }
+.bar-row .name { width: 90px; }
+.bar-row .bar { flex: 1; height: 12px; background: #eef2f7; border-radius: 6px; overflow: hidden; }
+.bar-row .bar > span { display: block; height: 100%; background: var(--blue); border-radius: 6px; }
+.bar-row .val { width: 28px; text-align: right; font-weight: 600; }
+.panel { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
+
+/* ---------- 9. Tables ---------- */
+.table-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.table-card table { margin: 0; }
+.table-card thead th { background: #f8fafc; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--grey-text); font-weight: 600; white-space: nowrap; }
+.table-card td { vertical-align: middle; font-size: .92rem; }
+
+/* ---------- 10. Misc ---------- */
+.news-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 14px; }
+.news-card h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 2px; }
+.empty-state { text-align: center; color: var(--grey-text); padding: 48px 16px; background: #fff; border: 1px dashed var(--border); border-radius: var(--radius); }
+.toast-container { z-index: 2000; }
+.spinner-wrap { text-align: center; padding: 48px; color: var(--grey-text); }
+.stars { color: #f59e0b; letter-spacing: 1px; }
+
+/* ---------- 11. Certificate ---------- */
+.cert-page { background: #e9edf3; min-height: 100vh; padding: 28px 12px; }
+.cert-actions { max-width: 900px; margin: 0 auto 16px; display: flex; gap: 8px; justify-content: space-between; }
+.cert-paper {
+  max-width: 900px; margin: 0 auto; background: #fff; padding: 18px;
+  box-shadow: 0 6px 24px rgba(15,23,42,.15);
+}
+.cert-border { border: 6px double var(--navy); padding: 48px 40px; text-align: center; }
+.cert-border .org { letter-spacing: .25em; color: var(--blue); font-weight: 700; font-size: .85rem; }
+.cert-border h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 2.8rem; color: var(--navy); margin: 14px 0 6px; }
+.cert-border .small-line { color: var(--grey-text); margin: 10px 0; }
+.cert-border .recipient { font-family: Georgia, serif; font-size: 2.2rem; font-style: italic; border-bottom: 2px solid var(--border); display: inline-block; padding: 0 28px 6px; margin: 8px 0 14px; }
+.cert-border .event-name { font-size: 1.5rem; font-weight: 700; color: var(--navy); }
+.cert-sign { display: flex; justify-content: space-around; margin-top: 64px; }
+.cert-sign div { border-top: 1px solid #94a3b8; padding-top: 6px; width: 200px; color: var(--grey-text); font-size: .85rem; }
+@media print {
+  .cert-actions, .no-print { display: none !important; }
+  .cert-page { background: #fff; padding: 0; }
+  .cert-paper { box-shadow: none; }
+}
+
+/* ---------- 12. Responsive ---------- */
+@media (max-width: 860px) {
+  .login-page { flex-direction: column; }
+  .login-left { padding: 28px 24px; gap: 40px; }
+  .login-left h1 { font-size: 1.9rem; }
+}
+@media (max-width: 576px) {
+  .page-title { font-size: 1.6rem; }
+  .event-card { padding: 18px; }
+  .tag { margin: 6px 6px 0 0; }
+}
